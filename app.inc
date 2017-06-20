@@ -110,6 +110,7 @@ _:	ex	de,hl
 	dec	hl
 	dec	hl
 	push	hl
+	di
 	ld	a,$d1
 	ld	mb,a
 	ld.sis	sp,$987e
