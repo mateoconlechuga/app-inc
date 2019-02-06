@@ -19,23 +19,23 @@ include 'include/app.inc'
 	app_create
 	
 	ret	nz
-	call	_ChkFindSym
-	jp	_DelVarArc		; delete installer code
+	call	ti.ChkFindSym
+	jp	ti.DelVarArc		; delete installer code
 
 ; ------------------------------------------------
 ; start of actual application code
 	app_start 'EXECLIB', '(C) 2017 MateoConLechuga', '0.0.0.1', 3
 	
-	jp	_JForceCmdNoChar	; just exit when someone tries to launch
+	jp	ti.JForceCmdNoChar	; just exit when someone tries to launch
 
 DoNothing:
 	ret
 
 RunIndicOff:
-	jp	_RunIndicOff
+	jp	ti.RunIndicOff
 
 EnableLowercase:
-	set	lwrCaseActive,(iy + appLwrCaseFlag)
+	set	ti.lwrCaseActive,(iy + ti.appLwrCaseFlag)
 	ret
 
 ; ------------------------------------------------
